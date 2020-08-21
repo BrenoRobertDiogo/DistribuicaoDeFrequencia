@@ -50,7 +50,7 @@ function quantidaDeLinhas() {
 		textoModal.innerHTML     = 'Por favor, coloque um número válido'
 		modalTituloDiv.className = 'modal-header text-danger'
 		btnModal.className       = 'btn btn-outline-danger'
-		$('#registra-despesa').modal('show')
+		$('#modalAparece').modal('show')
 	}
 }
 
