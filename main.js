@@ -112,16 +112,19 @@ class ManipularTabela {
 		absoluto('fri0', 'friM0')
 		absoluto('fi0', 'fiM0')
 		let tabela = this.pegaValores()
-		console.log('Tabela reversa: '+this.tabelaReverse)
+		console.log('Tabela reversa: ' + this.tabelaReverse)
 		 
 		
 		let soma = this.fi
 		let total = 0
 		for (var i = 0; i < soma.length; total += Number(soma[i++]));
-			let valor = document.getElementById('soma1')
+		
+		let valor = document.getElementById('soma1')
 
+		let somaFi   = Array()
 		let somafiM  = Array()
 		let somafriM = Array()
+
 		
 		let somatorioLista = (arP, arA) => {
 			let armazenando = 0
@@ -130,33 +133,36 @@ class ManipularTabela {
 			}
 			arP.splice(0, 1)
 		}
-		somatorioLista(somafiM, this.fiR)
+		somatorioLista(somafiM, this.fi)
 		somatorioLista(somafriM, this.friR)
-		// console.log('SOMA DOS VALORES fi: '+somafiM)
-		// console.log('SOMA DOS VALORES fri: '+somafriM)
+		somatorioLista(somaFi, this.fi)
 
+		console.log(somaFi)
 		somafiM.forEach(function escreverEmCima(arg, index, array) {
-			// fri${}
+
 			let x = Number(document.getElementById(`fi${index}`).value)
 			let total = Number(document.getElementById('soma1').value)
 			x = (x/total)*100
-			document.getElementById(`fri${index}`).value = x
-			console.log(document.getElementById(`fi${index}`).value)
+			
+			
+			document.getElementById(`fri${index}`).value = x//Agora é Fi
+			// console.log(document.getElementById(`fi${index}`).value)
 		})
 
 		somafriM.forEach(function escreverEmCima2(arg, index, array) {
 			let x = Number(document.getElementById(`fi${index}`).value)
 			
 			document.getElementById(`fiM${index}`).value = arg
-			console.log(document.getElementById(`fi${index}`).value)
+			// console.log(document.getElementById(`fi${index}`).value)
 		})
-		let somafriMM = Array()
-		somatorioLista(somafriMM, somafriM)
-		somafriMM.forEach(function escreverEmCima3(arg, index, array) {
+		
+		// let somafriMM = Array()
+		// somatorioLista(somafriMM, somafriM)
+		somaFi.forEach(function escreverEmCima3(arg, index, array) {
 			let x = Number(document.getElementById(`fiM${index}`).value)
 			
 			document.getElementById(`friM${index}`).value = arg
-			console.log(document.getElementById(`friM${index}`).value)
+			// console.log(document.getElementById(`friM${index}`).value)
 		})
 
 		valor.value = total
